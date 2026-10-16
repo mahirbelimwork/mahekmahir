@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-noir: #0C060A;
+    --color-velvet: #170B13;
+    --color-burgundy: #2C111C;
+    --color-wine: #581C2E;
+    --color-rose: #C2637D;
+    --color-dusty-pink: #E295A8;
+    --color-blush-silk: #F7E7EC;
+    --color-ivory: #FAF6F0;
+    --color-gold: #C5A059;
+    --color-gold-light: #EAD59E;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #0C060A;
+    color: #FAF6F0;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+
+  .font-handwriting {
+    font-family: 'Caveat', cursive;
+  }
+}
+
+/* Custom editorial scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #0C060A;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(197, 160, 89, 0.35);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(197, 160, 89, 0.6);
+}
+
+/* Luxury animations */
+@keyframes goldShimmer {
+  0%, 100% {
+    opacity: 0.35;
+    filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.25));
+  }
+  50% {
+    opacity: 0.85;
+    filter: drop-shadow(0 0 25px rgba(234, 213, 158, 0.6));
+  }
+}
+
+@keyframes candleGlow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+    filter: drop-shadow(0 0 20px rgba(226, 149, 168, 0.3));
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 45px rgba(197, 160, 89, 0.55));
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1.2deg);
+  }
+}
+
+@keyframes floatDrift {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(-12px) translateX(6px);
+  }
+}
+
+@keyframes fallingHeartRain {
+  0% {
+    transform: translate3d(0, -60px, 0) rotate(0deg) scale(0.65);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+    transform: translate3d(calc(var(--drift, 0px) * 0.2), 12vh, 0) rotate(12deg) scale(1.1);
+  }
+  85% {
+    opacity: 0.95;
+    transform: translate3d(var(--drift, 0px), 85vh, 0) rotate(35deg) scale(1);
+  }
+  100% {
+    transform: translate3d(calc(var(--drift, 0px) * 1.3), 110vh, 0) rotate(55deg) scale(0.85);
+    opacity: 0;
+  }
+}
+
+@keyframes fallPetalGold {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.75;
+  }
+  85% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate3d(40px, 108vh, 0) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.animate-gold-shimmer {
+  animation: goldShimmer 4s ease-in-out infinite;
+}
+
+.animate-candle-glow {
+  animation: candleGlow 4.5s ease-in-out infinite;
+}
+
+.animate-float-gentle {
+  animation: floatGentle 5.5s ease-in-out infinite;
+}
+
+/* Ultra-luxury dark glass & editorial surfaces */
+.luxury-editorial-surface {
+  background: linear-gradient(
+    145deg,
+    rgba(26, 12, 21, 0.82) 0%,
+    rgba(17, 8, 14, 0.88) 100%
+  );
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(197, 160, 89, 0.22);
+  box-shadow: 
+    0 25px 60px -15px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset,
+    0 0 35px -5px rgba(197, 160, 89, 0.06);
+}
+
+.luxury-editorial-card-elevated {
+  background: linear-gradient(
+    145deg,
+    rgba(32, 14, 25, 0.88) 0%,
+    rgba(18, 9, 15, 0.94) 100%
+  );
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1px solid rgba(234, 213, 158, 0.32);
+  box-shadow: 
+    0 35px 80px -20px rgba(0, 0, 0, 0.85),
+    0 0 0 1px rgba(234, 213, 158, 0.12) inset,
+    0 0 45px -8px rgba(197, 160, 89, 0.12);
+}
+
+.luxury-gold-foil-border {
+  border: 1px solid transparent;
+  background-image: linear-gradient(rgba(26, 12, 21, 0.9), rgba(26, 12, 21, 0.9)),
+    linear-gradient(135deg, #C5A059 0%, #FAF6F0 45%, #C2637D 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
