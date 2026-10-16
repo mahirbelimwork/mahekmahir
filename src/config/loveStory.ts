@@ -1,3 +1,13 @@
+export interface RelationshipMilestone {
+  id: string;
+  phase: string;
+  title: string;
+  subtitle: string;
+  narrative: string;
+  quote: string;
+  iconName: 'Sparkles' | 'Heart' | 'Flame' | 'Home' | 'Infinity';
+}
+
 export interface LoveStoryConfig {
   meta: {
     siteTitle: string;
@@ -21,6 +31,7 @@ export interface LoveStoryConfig {
     scrollHint: string;
     heroImageUrl: string;
   };
+  milestones: RelationshipMilestone[];
   chapters: {
     chapter1: {
       number: string;
@@ -114,6 +125,53 @@ export const loveStoryConfig: LoveStoryConfig = {
     scrollHint: "Scroll to unveil our story ↓",
     heroImageUrl: "/src/assets/images/editorial_couple_twilight_1792150386025.jpg",
   },
+  milestones: [
+    {
+      id: "first-chapter",
+      phase: "Milestone 01",
+      title: "When Our Worlds Aligned",
+      subtitle: "The Serendipitous Beginning",
+      narrative: "Somewhere in this chaotic world, destiny crossed our paths. It wasn't loud or rushed—it was a quiet certainty that my life would never be the same again.",
+      quote: "The day ordinary days began turning into unforgettable memories.",
+      iconName: "Sparkles",
+    },
+    {
+      id: "realizing-love",
+      phase: "Milestone 02",
+      title: "Falling in Love",
+      subtitle: "The Quiet Realization",
+      narrative: "Love didn't arrive all at once; it settled gently in the sound of your laughter, the comfort of your voice, and how naturally my heart learned to trust you.",
+      quote: "You didn't just become someone I love—you became my favorite feeling.",
+      iconName: "Heart",
+    },
+    {
+      id: "our-sanctuary",
+      phase: "Milestone 03",
+      title: "Building Our Sanctuary",
+      subtitle: "Finding Home in You",
+      narrative: "Home ceased to be a place with walls and ceilings. Home became your presence, the warmth of your hand, and the peaceful exhale whenever we are together.",
+      quote: "If home were a person, it would always be you.",
+      iconName: "Home",
+    },
+    {
+      id: "sacred-vows",
+      phase: "Milestone 04",
+      title: "The Sacred Promise",
+      subtitle: "Choosing Each Other Every Day",
+      narrative: "Not just on the golden, easy days, but especially on the quiet, challenging ones. The conscious, devoted choice to hold your hand and choose you over and over.",
+      quote: "In every lifetime and every version of reality, I'd still choose you.",
+      iconName: "Flame",
+    },
+    {
+      id: "our-forever",
+      phase: "Milestone 05",
+      title: "Our Endless Tomorrow",
+      subtitle: "An Everlasting Journey",
+      narrative: "Every chapter written behind us is beautiful, but the pages ahead are filled with all the dreams, laughter, and sunsets we have yet to share.",
+      quote: "My favourite person, my greatest blessing, my forever Wifey.",
+      iconName: "Infinity",
+    },
+  ],
   chapters: {
     chapter1: {
       number: "01",
